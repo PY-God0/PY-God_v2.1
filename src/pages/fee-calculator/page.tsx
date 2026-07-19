@@ -335,6 +335,7 @@ export default function FeeCalculator() {
         <footer className="mt-6 text-center text-[11px] text-foreground-500 space-y-0.5">
           <p>單位轉換規則：1E = 1 億 | 1kw = 1000 萬 | 1w = 1 萬</p>
           <p>© 2026 PY之神 - Mabi拍賣手續費計算器</p>
+          <p>製作者 - 貓科絕對時間</p>
         </footer>
       </main>
     </div>
