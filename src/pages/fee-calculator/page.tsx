@@ -149,26 +149,46 @@ export default function FeeCalculator() {
               </div>
 
               {/* VIP Toggle */}
-              <div className="bg-background-200/50 border border-background-200 rounded-lg p-2.5 flex items-center justify-between">
+              <div
+                className={`border rounded-lg p-2.5 flex items-center justify-between transition-colors ${
+                  vipEnabled
+                    ? 'bg-primary-500/10 border-primary-500/30'
+                    : 'bg-background-200/50 border-background-200'
+                }`}
+              >
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-md bg-primary-500/20 flex items-center justify-center">
-                    <i className="ri-vip-crown-line text-xs text-primary-400"></i>
+                  <div
+                    className={`w-6 h-6 rounded-md flex items-center justify-center transition-colors ${
+                      vipEnabled ? 'bg-primary-500 text-white' : 'bg-primary-500/20 text-primary-400'
+                    }`}
+                  >
+                    <i className="ri-vip-crown-line text-xs"></i>
                   </div>
                   <div>
-                    <div className="text-xs font-medium text-foreground-600">VIP 服務</div>
+                    <div
+                      className={`text-xs font-medium transition-colors ${
+                        vipEnabled ? 'text-primary-400' : 'text-foreground-600'
+                      }`}
+                    >
+                      VIP 服務
+                    </div>
                     <div className="text-[10px] text-foreground-400">{vipEnabled ? '手續費 4%' : '手續費 5%'}</div>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setVipEnabled((v) => !v)}
-                  className={`relative w-9 h-4.5 rounded-full transition ${
-                    vipEnabled ? 'bg-primary-500' : 'bg-background-400'
+                  className={`relative w-10 h-5 rounded-full transition-all ${
+                    vipEnabled
+                      ? 'bg-primary-500 shadow-[0_0_8px_var(--primary-500)]'
+                      : 'bg-background-400'
                   }`}
                 >
                   <div
-                    className="absolute top-[2px] w-3.5 h-3.5 rounded-full bg-white shadow transition"
-                    style={{ left: vipEnabled ? 'calc(100% - 1.1rem)' : '3px' }}
+                    className={`absolute top-[3px] w-3.5 h-3.5 rounded-full bg-white transition-all ${
+                      vipEnabled ? 'shadow-[0_0_4px_rgba(255,255,255,0.6)]' : ''
+                    }`}
+                    style={{ left: vipEnabled ? 'calc(100% - 1.05rem)' : '3px' }}
                   ></div>
                 </button>
               </div>
