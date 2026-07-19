@@ -528,6 +528,7 @@ export default function Home() {
       <footer className="max-w-5xl mx-auto px-4 md:px-6 pb-6 text-center text-xs text-foreground-500 space-y-0.5">
         <p>數據會自動保存到本機，關閉網頁後下次仍可繼續使用</p>
         <p>© 2026 PY之神 - G27輪珠工具</p>
+        <p>製作者 - 貓科絕對時間</p>
       </footer>
 
       <Toast message={toast.msg} visible={toast.visible} variant={toast.variant} />
